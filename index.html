@@ -13,6 +13,10 @@
 
 <style>
 
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root{
     --gold:#f5c04e;
     --gold-light:#ffe29a;
@@ -21,6 +25,11 @@
     --wine:#260817;
 }
 
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -28,10 +37,17 @@
     scroll-behavior:smooth;
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body{
     min-height:200vh;
     overflow-x:hidden;
+
     color:white;
+
     font-family:'Marcellus',serif;
 
     background:
@@ -43,18 +59,25 @@ body{
         );
 }
 
+
 /* =====================================================
    GOLDEN PARTICLE CANVAS
 ===================================================== */
 
 #sparkleCanvas{
     position:fixed;
-    inset:0;
+
+    top:0;
+    left:0;
+
     width:100%;
     height:100%;
+
     pointer-events:none;
+
     z-index:1;
 }
+
 
 /* =====================================================
    COMMON SECTION
@@ -63,17 +86,21 @@ body{
 section{
     min-height:100vh;
     width:100%;
+
     position:relative;
     z-index:2;
 
     display:flex;
     flex-direction:column;
+
     align-items:center;
     justify-content:center;
 
     padding:30px 20px;
+
     text-align:center;
 }
+
 
 /* =====================================================
    SCENE 1
@@ -88,7 +115,10 @@ section{
         );
 }
 
-/* Top label */
+
+/* =====================================================
+   TOP LABEL
+===================================================== */
 
 .sender-top-tag{
     padding:8px 22px;
@@ -98,8 +128,8 @@ section{
     background:
         rgba(245,192,78,.08);
 
-    border:1px solid
-        rgba(245,192,78,.45);
+    border:
+        1px solid rgba(245,192,78,.45);
 
     color:var(--gold-light);
 
@@ -112,10 +142,14 @@ section{
     margin-bottom:18px;
 
     box-shadow:
-        0 0 25px rgba(245,192,78,.08);
+        0 0 25px
+        rgba(245,192,78,.08);
 }
 
-/* Instruction */
+
+/* =====================================================
+   DIYA INSTRUCTION
+===================================================== */
 
 .scene-1-hint{
     color:#ffe5ad;
@@ -130,26 +164,31 @@ section{
         pulseHint 2s infinite ease-in-out;
 }
 
+
 /* =====================================================
    DIYA MANDALA
 ===================================================== */
 
 .diya-circle-container{
+
     position:relative;
 
     width:340px;
     height:340px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     margin:10px auto;
 }
 
-/* Decorative glowing ring */
+
+/* Decorative circle */
 
 .diya-circle-container::before{
+
     content:"";
 
     position:absolute;
@@ -159,17 +198,25 @@ section{
 
     border-radius:50%;
 
-    border:1px solid
+    border:
+        1px solid
         rgba(245,192,78,.15);
 
     box-shadow:
-        0 0 60px rgba(255,150,0,.08),
-        inset 0 0 40px rgba(255,150,0,.04);
+        0 0 60px
+        rgba(255,150,0,.08),
+
+        inset 0 0 40px
+        rgba(255,150,0,.04);
 }
 
-/* Center diya */
+
+/* =====================================================
+   CENTER DIYA
+===================================================== */
 
 .center-diya{
+
     width:120px;
     height:90px;
 
@@ -191,9 +238,13 @@ section{
     transform:scale(1.12);
 }
 
-/* Outer diyas */
+
+/* =====================================================
+   RADIAL DIYAS
+===================================================== */
 
 .radial-diya{
+
     position:absolute;
 
     width:55px;
@@ -211,28 +262,46 @@ section{
 
     transition:
         opacity 1s ease,
-        transform 1s cubic-bezier(.18,.89,.32,1.28);
+
+        transform
+        1s cubic-bezier(
+            .18,.89,.32,1.28
+        );
 }
 
 .diya-circle-container.expanded
 .radial-diya{
+
     opacity:1;
+
     transform:scale(1);
 }
 
-/* Flame */
+
+/* =====================================================
+   FLAME
+===================================================== */
 
 .diya-flame{
+
     animation:
-        flicker 1.5s infinite alternate ease-in-out;
+        flicker
+        1.5s
+        infinite
+        alternate
+        ease-in-out;
 
     transform-origin:
         bottom center;
 }
 
-/* First message */
+
+/* =====================================================
+   FIRST MESSAGE
+===================================================== */
 
 .path-msg{
+
     max-width:620px;
 
     margin-top:30px;
@@ -240,7 +309,11 @@ section{
     color:#ffe7b0;
 
     font-size:
-        clamp(1.05rem,3.5vw,1.55rem);
+        clamp(
+            1.05rem,
+            3.5vw,
+            1.55rem
+        );
 
     line-height:1.8;
 
@@ -259,15 +332,19 @@ section{
 }
 
 .path-msg.revealed{
+
     opacity:1;
+
     transform:translateY(0);
 }
+
 
 /* =====================================================
    SCENE 2
 ===================================================== */
 
 #scene2{
+
     background:
         radial-gradient(
             circle at 50% 50%,
@@ -276,11 +353,13 @@ section{
         );
 }
 
+
 /* =====================================================
-   PHOTO + AARTI STAGE
+   AARTI STAGE
 ===================================================== */
 
 .aarti-stage{
+
     position:relative;
 
     width:300px;
@@ -289,9 +368,13 @@ section{
     margin:20px auto 35px;
 }
 
-/* Permanent photo frame */
+
+/* =====================================================
+   PERMANENT PHOTO FRAME
+===================================================== */
 
 .photo-frame{
+
     width:100%;
     height:100%;
 
@@ -301,7 +384,8 @@ section{
         150px 150px 22px 22px;
 
     border:
-        3px solid var(--gold);
+        3px solid
+        var(--gold);
 
     background:
         linear-gradient(
@@ -311,6 +395,7 @@ section{
         );
 
     box-shadow:
+
         0 0 55px
         rgba(255,140,0,.38),
 
@@ -318,18 +403,20 @@ section{
         rgba(245,192,78,.2);
 }
 
-/* Permanent image */
+
+/* Permanent photo */
 
 .photo-frame img{
+
     width:100%;
     height:100%;
+
+    display:block;
 
     object-fit:cover;
 
     border-radius:
         143px 143px 16px 16px;
-
-    display:block;
 
     transition:
         transform .7s ease,
@@ -337,119 +424,233 @@ section{
 }
 
 .photo-frame:hover img{
+
     transform:scale(1.04);
 
-    filter:
-        brightness(1.08);
+    filter:brightness(1.08);
 }
 
+
 /* =====================================================
-   AARTI THALI
+   PROFESSIONAL AARTI THALI
 ===================================================== */
 
 .aarti-thali{
+
     position:absolute;
 
     top:50%;
     left:50%;
 
-    width:100px;
-    height:100px;
+    width:105px;
+    height:105px;
 
     z-index:20;
 
     pointer-events:none;
 
     animation:
-        aartiOrbit 6.5s
-        infinite linear;
+        aartiOrbit
+        7s
+        infinite
+        linear;
 
     filter:
         drop-shadow(
-            0 0 22px
-            rgba(255,175,20,.95)
+            0 0 12px
+            rgba(255,180,30,.8)
+        )
+
+        drop-shadow(
+            0 0 30px
+            rgba(255,120,0,.35)
         );
 }
+
+
+/* =====================================================
+   AARTI GOLDEN AURA
+===================================================== */
+
+.aarti-thali::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:145px;
+    height:145px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+
+            rgba(255,190,50,.22)
+            0%,
+
+            rgba(255,130,0,.08)
+            40%,
+
+            transparent 72%
+        );
+
+    animation:
+        aartiGlow
+        2s
+        infinite
+        alternate
+        ease-in-out;
+}
+
+
+/* =====================================================
+   AARTI ORBIT RING
+===================================================== */
+
+.aarti-thali::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,200,80,.12);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,170,30,.08);
+
+    opacity:.7;
+}
+
+
+/* =====================================================
+   SMOOTH CLOCKWISE AARTI
+===================================================== */
 
 @keyframes aartiOrbit{
 
     0%{
+
         transform:
-        translate(
-            calc(-50% + 0px),
-            calc(-50% + 145px)
-        ) scale(1.1);
+            translate(
+                calc(-50% + 0px),
+                calc(-50% + 150px)
+            )
+            scale(1.12)
+            rotate(0deg);
     }
 
     25%{
+
         transform:
-        translate(
-            calc(-50% + 135px),
-            calc(-50% + 70px)
-        ) scale(1.03);
+            translate(
+                calc(-50% + 145px),
+                calc(-50% + 55px)
+            )
+            scale(1.02)
+            rotate(90deg);
     }
 
     50%{
+
         transform:
-        translate(
-            calc(-50% + 0px),
-            calc(-50% - 105px)
-        ) scale(.9);
+            translate(
+                calc(-50% + 0px),
+                calc(-50% - 115px)
+            )
+            scale(.88)
+            rotate(180deg);
     }
 
     75%{
+
         transform:
-        translate(
-            calc(-50% - 135px),
-            calc(-50% + 70px)
-        ) scale(1.03);
+            translate(
+                calc(-50% - 145px),
+                calc(-50% + 55px)
+            )
+            scale(1.02)
+            rotate(270deg);
     }
 
     100%{
+
         transform:
-        translate(
-            calc(-50% + 0px),
-            calc(-50% + 145px)
-        ) scale(1.1);
+            translate(
+                calc(-50% + 0px),
+                calc(-50% + 150px)
+            )
+            scale(1.12)
+            rotate(360deg);
     }
 }
 
+
 /* =====================================================
-   TEXT SECTION
+   AARTI GLOW
+===================================================== */
+
+@keyframes aartiGlow{
+
+    0%{
+
+        opacity:.45;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.85);
+    }
+
+    100%{
+
+        opacity:.9;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   MESSAGE AREA
 ===================================================== */
 
 .quote-box{
+
     width:100%;
+
     max-width:700px;
 }
 
-/* Dramatic line */
 
-.tender-line{
-    max-width:620px;
-
-    margin:
-        0 auto 22px;
-
-    color:#ffd39a;
-
-    font-size:
-        clamp(.95rem,2.8vw,1.2rem);
-
-    line-height:1.8;
-
-    font-style:italic;
-
-    letter-spacing:.5px;
-
-    text-shadow:
-        0 0 20px
-        rgba(255,150,0,.3);
-}
-
-/* Main message */
+/* =====================================================
+   MAIN MESSAGE
+===================================================== */
 
 .goddess-msg{
+
     max-width:680px;
 
     margin:auto;
@@ -457,7 +658,11 @@ section{
     color:#fff1d5;
 
     font-size:
-        clamp(1.25rem,4vw,1.85rem);
+        clamp(
+            1.25rem,
+            4vw,
+            1.85rem
+        );
 
     line-height:1.7;
 
@@ -468,9 +673,13 @@ section{
         rgba(255,160,0,.45);
 }
 
-/* Title */
+
+/* =====================================================
+   DIWALI TITLE
+===================================================== */
 
 .devi-title{
+
     margin-top:24px;
 
     font-family:
@@ -478,7 +687,11 @@ section{
         cursive;
 
     font-size:
-        clamp(1.9rem,6vw,3.3rem);
+        clamp(
+            1.9rem,
+            6vw,
+            3.3rem
+        );
 
     background:
         linear-gradient(
@@ -500,9 +713,13 @@ section{
         );
 }
 
-/* Signature */
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
 
 .sender-signature{
+
     margin-top:35px;
 
     color:var(--gold);
@@ -518,7 +735,9 @@ section{
     line-height:2;
 }
 
+
 .sender-signature span{
+
     display:inline-block;
 
     margin-top:5px;
@@ -547,43 +766,59 @@ section{
         );
 }
 
+
 /* =====================================================
-   ANIMATIONS
+   FLAME ANIMATION
 ===================================================== */
 
 @keyframes flicker{
 
     0%{
+
         transform:
             scale(1)
             rotate(-1deg);
     }
 
     50%{
+
         transform:
             scale(1.1,.95)
             rotate(1.5deg);
     }
 
     100%{
+
         transform:
             scale(.95,1.05)
             rotate(-2deg);
     }
 }
 
+
+/* =====================================================
+   HINT ANIMATION
+===================================================== */
+
 @keyframes pulseHint{
 
     0%,100%{
+
         opacity:.6;
-        transform:scale(.98);
+
+        transform:
+            scale(.98);
     }
 
     50%{
+
         opacity:1;
-        transform:scale(1.02);
+
+        transform:
+            scale(1.02);
     }
 }
+
 
 /* =====================================================
    MOBILE
@@ -592,30 +827,42 @@ section{
 @media(max-width:500px){
 
     .diya-circle-container{
+
         width:300px;
         height:300px;
     }
 
+
     .aarti-stage{
+
         width:270px;
         height:350px;
     }
 
+
     .aarti-thali{
+
         width:85px;
         height:85px;
     }
 
+
     .sender-top-tag{
+
         font-size:.68rem;
+
         letter-spacing:2px;
     }
 
+
     .scene-1-hint{
+
         font-size:.8rem;
     }
 
+
     .sender-signature span{
+
         font-size:1.7rem;
     }
 }
@@ -626,8 +873,9 @@ section{
 
 <body>
 
+
 <!-- =====================================================
-     GOLDEN PARTICLES
+     GOLDEN PARTICLE BACKGROUND
 ===================================================== -->
 
 <canvas id="sparkleCanvas"></canvas>
@@ -639,6 +887,7 @@ section{
 
 <section id="scene1">
 
+
     <div class="sender-top-tag">
         A Special Wish from Utkarsh
     </div>
@@ -649,14 +898,17 @@ section{
     </div>
 
 
-    <!-- DIYA MANDALA -->
+    <!-- =================================================
+         DIYA MANDALA
+    ================================================= -->
 
     <div
         class="diya-circle-container"
         id="diyaContainer"
     >
 
-        <!-- Center diya -->
+
+        <!-- CENTER DIYA -->
 
         <div
             class="center-diya"
@@ -672,7 +924,7 @@ section{
                 <g class="diya-flame">
 
                     <path
-                        d="M70 10 C73 24,85 36,78 52 C74 60,66 60,62 52 C55 36,67 24,70 10 Z"
+                        d="M70 10 C73 24,85 36,78 52 C74 60,66 60,62 52 C55 36,67 24,70 10Z"
                         fill="url(#flameGrad)"
                     />
 
@@ -706,13 +958,15 @@ section{
     </div>
 
 
-    <!-- First message -->
+    <!-- FIRST MESSAGE -->
 
     <div
         class="path-msg"
         id="pathMsg"
     >
+
         "Thank you for showing me the path in dark times."
+
     </div>
 
 </section>
@@ -725,19 +979,21 @@ section{
 <section id="scene2">
 
 
-    <!-- PHOTO + AARTI -->
+    <!-- =================================================
+         PHOTO + AARTI STAGE
+    ================================================= -->
 
     <div class="aarti-stage">
+
 
         <!--
             PERMANENT PHOTO
 
-            Keep this image in the same folder
-            as index.html.
-
-            File name MUST be:
+            Put:
 
             herPhoto.jpg
+
+            in the SAME folder as this HTML file.
         -->
 
         <div class="photo-frame">
@@ -751,91 +1007,131 @@ section{
         </div>
 
 
-        <!-- Aarti Thali -->
+        <!-- =================================================
+             PROFESSIONAL AARTI THALI
+        ================================================= -->
 
         <div class="aarti-thali">
+
 
             <svg
                 viewBox="0 0 120 120"
                 fill="none"
             >
 
-                <!-- Brass plate -->
+
+                <!-- BRASS PLATE -->
 
                 <circle
                     cx="60"
                     cy="60"
-                    r="52"
+                    r="54"
                     fill="url(#brassGrad)"
-                    stroke="#ffd700"
-                    stroke-width="3"
+                    stroke="#ffe28a"
+                    stroke-width="2.5"
                 />
+
+
+                <!-- INNER RIM -->
 
                 <circle
                     cx="60"
                     cy="60"
-                    r="44"
-                    stroke="#e69500"
+                    r="47"
+                    fill="none"
+                    stroke="#d99720"
                     stroke-width="1.5"
-                    stroke-dasharray="4 3"
                 />
 
-
-                <!-- Flowers -->
 
                 <circle
-                    cx="36"
-                    cy="45"
-                    r="8"
-                    fill="#ff7700"
-                />
-
-                <circle
-                    cx="84"
-                    cy="45"
-                    r="8"
-                    fill="#ff4400"
-                />
-
-                <circle
-                    cx="45"
-                    cy="80"
-                    r="7"
-                    fill="#ffaa00"
-                />
-
-                <circle
-                    cx="75"
-                    cy="80"
-                    r="7"
-                    fill="#ff2200"
-                />
-
-                <circle
-                    cx="36"
-                    cy="45"
-                    r="4"
-                    fill="#ffee55"
-                />
-
-                <circle
-                    cx="84"
-                    cy="45"
-                    r="4"
-                    fill="#ffee55"
+                    cx="60"
+                    cy="60"
+                    r="42"
+                    fill="none"
+                    stroke="#fff0a8"
+                    stroke-width="1"
+                    stroke-dasharray="2 4"
                 />
 
 
-                <!-- Small diya -->
+                <!-- FLOWERS -->
+
+                <g>
+
+                    <circle
+                        cx="34"
+                        cy="43"
+                        r="7"
+                        fill="#ff8a00"
+                    />
+
+                    <circle
+                        cx="86"
+                        cy="43"
+                        r="7"
+                        fill="#ff6b00"
+                    />
+
+                    <circle
+                        cx="39"
+                        cy="78"
+                        r="7"
+                        fill="#ffad00"
+                    />
+
+                    <circle
+                        cx="81"
+                        cy="78"
+                        r="7"
+                        fill="#ff7100"
+                    />
+
+
+                    <circle
+                        cx="34"
+                        cy="43"
+                        r="3"
+                        fill="#fff2a0"
+                    />
+
+                    <circle
+                        cx="86"
+                        cy="43"
+                        r="3"
+                        fill="#fff2a0"
+                    />
+
+                    <circle
+                        cx="39"
+                        cy="78"
+                        r="3"
+                        fill="#fff2a0"
+                    />
+
+                    <circle
+                        cx="81"
+                        cy="78"
+                        r="3"
+                        fill="#fff2a0"
+                    />
+
+                </g>
+
+
+                <!-- CENTRAL DIYA -->
 
                 <g
-                    transform="translate(42,38) scale(.28)"
+                    transform="translate(42 39) scale(.27)"
                 >
 
                     <g class="diya-flame">
 
                         <path
-                            d="M70 10 C73 24,85 36,78 52 C74 60,66 60,62 52 C55 36,67 24,70 10Z"
+                            d="M70 10
+                               C73 24 85 36 78 52
+                               C74 60 66 60 62 52
+                               C55 36 67 24 70 10Z"
                             fill="url(#flameGrad)"
                         />
 
@@ -850,7 +1146,9 @@ section{
 
 
                     <path
-                        d="M20 56 C20 84,120 84,120 56 C120 50,20 50,20 56Z"
+                        d="M20 56
+                           C20 84 120 84 120 56
+                           C120 50 20 50 20 56Z"
                         fill="url(#clayGrad)"
                         stroke="#f5c04e"
                         stroke-width="4"
@@ -866,23 +1164,11 @@ section{
 
 
     <!-- =================================================
-         MESSAGE
+         FINAL MESSAGE
     ================================================= -->
 
     <div class="quote-box">
 
-
-        <!-- Dramatic effort line -->
-
-        <p class="tender-line">
-
-            “Maybe this little website means nothing to you…
-            still, I’ve made it with all my efforts, just for you.”
-
-        </p>
-
-
-        <!-- Main emotional message -->
 
         <p class="goddess-msg">
 
@@ -892,16 +1178,12 @@ section{
         </p>
 
 
-        <!-- Diwali title -->
-
         <h2 class="devi-title">
 
             Happy Diwali, Devi Ji ✨
 
         </h2>
 
-
-        <!-- Signature -->
 
         <div class="sender-signature">
 
@@ -928,7 +1210,8 @@ section{
 
 <defs>
 
-    <!-- Flame -->
+
+    <!-- FLAME -->
 
     <linearGradient
         id="flameGrad"
@@ -961,7 +1244,7 @@ section{
     </linearGradient>
 
 
-    <!-- Clay -->
+    <!-- CLAY -->
 
     <linearGradient
         id="clayGrad"
@@ -989,7 +1272,7 @@ section{
     </linearGradient>
 
 
-    <!-- Brass -->
+    <!-- BRASS -->
 
     <radialGradient
         id="brassGrad"
@@ -1027,30 +1310,39 @@ section{
 
 <script>
 
+
 /* =====================================================
-   DIYA MANDALA
+   CREATE 8 RADIAL DIYAS
 ===================================================== */
 
 const container =
-    document.getElementById("diyaContainer");
+    document.getElementById(
+        "diyaContainer"
+    );
 
 const totalDiyas = 8;
 
 const radius = 115;
 
 
-for(let i = 0; i < totalDiyas; i++){
+for(
+    let i = 0;
+    i < totalDiyas;
+    i++
+){
 
     const angle =
         (i / totalDiyas) *
         Math.PI *
         2;
 
+
     const x =
         Math.round(
             radius *
             Math.cos(angle)
         );
+
 
     const y =
         Math.round(
@@ -1060,7 +1352,10 @@ for(let i = 0; i < totalDiyas; i++){
 
 
     const diya =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     diya.className =
         "radial-diya";
@@ -1068,6 +1363,7 @@ for(let i = 0; i < totalDiyas; i++){
 
     diya.style.left =
         `calc(50% + ${x}px - 27px)`;
+
 
     diya.style.top =
         `calc(50% + ${y}px - 21px)`;
@@ -1108,7 +1404,7 @@ for(let i = 0; i < totalDiyas; i++){
 
 
 /* =====================================================
-   TAP + AUTO SCROLL
+   DIYA TAP EVENT
 ===================================================== */
 
 let hasTriggered = false;
@@ -1118,6 +1414,7 @@ function igniteDiyaCircle(){
 
     if(hasTriggered)
         return;
+
 
     hasTriggered = true;
 
@@ -1142,7 +1439,9 @@ function igniteDiyaCircle(){
     );
 
 
-    /* Rotate outer diyas */
+    /* ==========================================
+       ROTATE OUTER DIYAS
+    ========================================== */
 
     let rotation = 0;
 
@@ -1159,15 +1458,17 @@ function igniteDiyaCircle(){
 
 
         diyas.forEach(
-            (d, index) => {
+            (d,index) => {
 
                 const angle =
                     (index /
                     totalDiyas) *
                     Math.PI *
-                    2 +
+                    2
+                    +
                     rotation *
-                    Math.PI / 180;
+                    Math.PI /
+                    180;
 
 
                 const x =
@@ -1187,6 +1488,7 @@ function igniteDiyaCircle(){
                 d.style.left =
                     `calc(50% + ${x}px - 27px)`;
 
+
                 d.style.top =
                     `calc(50% + ${y}px - 21px)`;
 
@@ -1196,7 +1498,9 @@ function igniteDiyaCircle(){
     },30);
 
 
-    /* Move to second scene */
+    /* ==========================================
+       AUTO SCROLL
+    ========================================== */
 
     setTimeout(() => {
 
@@ -1223,12 +1527,18 @@ function playChimeSound(){
             window.AudioContext ||
             window.webkitAudioContext;
 
+
         const audio =
             new AudioContext();
 
 
         const frequencies =
-            [528,660,792,1056];
+            [
+                528,
+                660,
+                792,
+                1056
+            ];
 
 
         frequencies.forEach(
@@ -1236,6 +1546,7 @@ function playChimeSound(){
 
                 const oscillator =
                     audio.createOscillator();
+
 
                 const gain =
                     audio.createGain();
@@ -1248,14 +1559,14 @@ function playChimeSound(){
                 oscillator.frequency.setValueAtTime(
                     frequency,
                     audio.currentTime +
-                    index*.1
+                    index * .1
                 );
 
 
                 gain.gain.setValueAtTime(
                     .18,
                     audio.currentTime +
-                    index*.1
+                    index * .1
                 );
 
 
@@ -1266,7 +1577,10 @@ function playChimeSound(){
                 );
 
 
-                oscillator.connect(gain);
+                oscillator.connect(
+                    gain
+                );
+
 
                 gain.connect(
                     audio.destination
@@ -1275,7 +1589,7 @@ function playChimeSound(){
 
                 oscillator.start(
                     audio.currentTime +
-                    index*.1
+                    index * .1
                 );
 
 
@@ -1287,9 +1601,11 @@ function playChimeSound(){
             }
         );
 
-    }catch(error){
+    }
 
-        /* Browser blocked audio */
+    catch(error){
+
+        /* Browser audio fallback */
 
     }
 
@@ -1305,6 +1621,7 @@ const canvas =
         "sparkleCanvas"
     );
 
+
 const ctx =
     canvas.getContext("2d");
 
@@ -1317,6 +1634,7 @@ function resizeCanvas(){
     canvas.width =
         window.innerWidth;
 
+
     canvas.height =
         window.innerHeight;
 
@@ -1328,10 +1646,17 @@ window.addEventListener(
     resizeCanvas
 );
 
+
 resizeCanvas();
 
 
-for(let i=0;i<55;i++){
+/* Create particles */
+
+for(
+    let i=0;
+    i<55;
+    i++
+){
 
     particles.push({
 
@@ -1364,6 +1689,8 @@ for(let i=0;i<55;i++){
 }
 
 
+/* Animate particles */
+
 function animateParticles(){
 
     ctx.clearRect(
@@ -1374,60 +1701,68 @@ function animateParticles(){
     );
 
 
-    particles.forEach(p=>{
+    particles.forEach(
+        p=>{
 
-        ctx.globalAlpha =
-            p.alpha;
-
-        ctx.fillStyle =
-            "#ffd679";
+            ctx.globalAlpha =
+                p.alpha;
 
 
-        ctx.beginPath();
-
-        ctx.arc(
-            p.x,
-            p.y,
-            p.radius,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
+            ctx.fillStyle =
+                "#ffd679";
 
 
-        p.y -=
-            p.speed;
-
-        p.x +=
-            p.drift;
+            ctx.beginPath();
 
 
-        if(p.y < -10){
+            ctx.arc(
+                p.x,
+                p.y,
+                p.radius,
+                0,
+                Math.PI*2
+            );
 
-            p.y =
-                canvas.height +
-                10;
 
-            p.x =
-                Math.random() *
-                canvas.width;
+            ctx.fill();
+
+
+            p.y -=
+                p.speed;
+
+
+            p.x +=
+                p.drift;
+
+
+            if(
+                p.y < -10
+            ){
+
+                p.y =
+                    canvas.height + 10;
+
+                p.x =
+                    Math.random() *
+                    canvas.width;
+
+            }
+
+
+            if(
+                p.x < -10 ||
+                p.x >
+                canvas.width + 10
+            ){
+
+                p.x =
+                    Math.random() *
+                    canvas.width;
+
+            }
 
         }
-
-
-        if(
-            p.x < -10 ||
-            p.x > canvas.width+10
-        ){
-
-            p.x =
-                Math.random() *
-                canvas.width;
-
-        }
-
-    });
+    );
 
 
     requestAnimationFrame(
@@ -1442,4 +1777,4 @@ animateParticles();
 </script>
 
 </body>
-  </html>
+</html>
